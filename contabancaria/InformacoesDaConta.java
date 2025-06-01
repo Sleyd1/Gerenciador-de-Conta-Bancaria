@@ -7,11 +7,12 @@ public class InformacoesDaConta {
     private int numeroDaConta;
     private double saldoDaConta;
 
-    ArrayList<Double> transacoes = new ArrayList<>();
+    private ArrayList<Double> transacoes = new ArrayList<>();
 
     public InformacoesDaConta (){
 
     }
+
 
     public void setNome (String nome){
         this.nome = nome;
@@ -51,8 +52,6 @@ public class InformacoesDaConta {
         } else {
 
             this.saldoDaConta += valor;
-           // transacoes = new double[1];
-            //transacoes[0] = valor;
             transacoes.add(valor);
 
         }
@@ -66,10 +65,8 @@ public class InformacoesDaConta {
         } else {
 
             this.saldoDaConta -= valor;
-            //transacoes = new double[1];
-            //transacoes[0] = -valor;
 
-            transacoes.add(-valor);
+           transacoes.add(-valor);
         }
 
     }

@@ -75,17 +75,6 @@ public class InformacoesDaConta {
     }
 
     public void historicoDetrasacoes(){
-           /* for ( double c : transacoes){
-                if (c < 0){
-                    System.out.println("dinheiro sacado: " + c);
-                }
-                else {
-                    System.out.println("dinheiro depositado: "+ c);
-                }
-
-
-
-            }*/
         for ( double c : transacoes){
             if (c < 0){
                 System.out.println("dinheiro sacado: R$" + c);

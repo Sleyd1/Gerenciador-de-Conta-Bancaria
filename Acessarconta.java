@@ -8,12 +8,10 @@ public class Acessarconta {
         conta1.setSaldoDaConta(300.7);
         conta1.informacoesDaConta();
         conta1.despositar(500.9);
-        //  conta1.informacoesDaConta();
-       // conta1.sacar(900);
-       // conta1.informacoesDaConta();
-        conta1.historicoDetrasacoes();
+        conta1.informacoesDaConta();
+        conta1.sacar(900);
+        conta1.informacoesDaConta();
         conta1.despositar(300);
-        conta1.historicoDetrasacoes();
         conta1.sacar(300);
         conta1.historicoDetrasacoes();
     }

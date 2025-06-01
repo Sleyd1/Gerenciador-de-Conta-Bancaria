@@ -1,14 +1,13 @@
 package contabancaria;
 
+import java.util.ArrayList;
 
 public class InformacoesDaConta {
     private String nome;
     private int numeroDaConta;
     private double saldoDaConta;
 
-    public double[] transacoes = new double[]{};
-    //public double[] sacado = new double[]{};
-
+    ArrayList<Double> transacoes = new ArrayList<>();
 
     public InformacoesDaConta (){
 
@@ -39,10 +38,10 @@ public class InformacoesDaConta {
     }
 
     public void informacoesDaConta(){
-        System.out.println("*----------------------------------------*");
+        System.out.println("*-----------------------------------------*");
         System.out.println("nome do titular: "+ getNome());
         System.out.println("número da conta: "+ getNumeroDaConta());
-        System.out.println("saldo da conta: "+ getSaldoDaConta());
+        System.out.println("saldo da conta: R$"+ getSaldoDaConta());
         System.out.println("*-----------------------------------------*");
     }
 
@@ -52,8 +51,9 @@ public class InformacoesDaConta {
         } else {
 
             this.saldoDaConta += valor;
-            transacoes = new double[1];
-            transacoes[0] = valor;
+           // transacoes = new double[1];
+            //transacoes[0] = valor;
+            transacoes.add(valor);
 
         }
 
@@ -61,20 +61,21 @@ public class InformacoesDaConta {
 
     public void sacar(double valor){
         if (valor > this.saldoDaConta ){
-            System.out.println("[Não foi possivel fazer o saque, você tem " + saldoDaConta +" disponivel para saque.]");
+            System.out.println("[Não foi possivel fazer o saque, você tem R$" + saldoDaConta +" disponivel para saque.]");
 
         } else {
 
             this.saldoDaConta -= valor;
-            transacoes = new double[1];
-            transacoes[0] = -valor;
+            //transacoes = new double[1];
+            //transacoes[0] = -valor;
 
+            transacoes.add(-valor);
         }
 
     }
 
     public void historicoDetrasacoes(){
-            for ( double c : transacoes){
+           /* for ( double c : transacoes){
                 if (c < 0){
                     System.out.println("dinheiro sacado: " + c);
                 }
@@ -83,8 +84,20 @@ public class InformacoesDaConta {
                 }
 
 
+
+            }*/
+        for ( double c : transacoes){
+            if (c < 0){
+                System.out.println("dinheiro sacado: R$" + c);
             }
-        System.out.println("Saldo do dia: "+ getSaldoDaConta());
+            else {
+                System.out.println("dinheiro depositado: R$"+ c);
+            }
+
+
+
+        }
+        System.out.println("Saldo do dia: R$"+ getSaldoDaConta());
 
 
     }
